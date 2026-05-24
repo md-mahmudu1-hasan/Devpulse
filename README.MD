@@ -43,49 +43,6 @@ A modern issue tracking and management system for collaborative development team
 - PostgreSQL database
 - npm or yarn package manager
 
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd devpulse
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Configure environment variables**
-   Create a `.env` file in the root directory:
-   ```env
-   CONNECTION_STRING=postgresql://user:password@localhost:5432/devpulse
-   NODE_ENV=development
-   JWT_SECRET=your_jwt_secret_key_here
-   PORT=5000
-   ```
-
-4. **Initialize the database**
-   The database tables are automatically created on server startup via the `initDB()` function.
-
-5. **Start the development server**
-   ```bash
-   npm run dev
-   ```
-   The server will run at `http://localhost:5000`
-
-6. **Build for production**
-   ```bash
-   npm run build
-   ```
-
-7. **Start production server**
-   ```bash
-   npm start
-   ```
-
----
-
 ## 🔌 API Endpoints
 
 ### Authentication
@@ -335,13 +292,3 @@ src/
 ```
 
 ---
-
-## 📄 License
-
-This project is licensed under ISC License.
-
----
-
-## 👨‍💻 Author
-
-Created as part of Programming Hero Level 2 - Module 10 Assignment
