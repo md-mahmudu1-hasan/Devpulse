@@ -5,7 +5,6 @@
 A modern issue tracking and management system for collaborative development teams. Devpulse enables contributors and maintainers to report bugs, request features, and manage project issues efficiently.
 
 ---
-
 ## 🎯 Features
 
 - **User Authentication**: Secure signup and login with JWT-based authentication
