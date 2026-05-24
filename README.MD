@@ -2,7 +2,7 @@
 DevPulse - Internal Tech Issue & Feature Tracker API
 
 # Live Url
-https://assignment-02-eta-taupe.vercel.app
+https://devpulse-eta-taupe.vercel.app
 
 # Tech Stack
 

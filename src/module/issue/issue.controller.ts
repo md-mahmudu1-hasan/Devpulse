@@ -27,6 +27,7 @@ const getAllIssues = async (req: Request, res: Response) => {
 
     res.status(200).json({
         success: true,
+        message: "Issues retrived successfully",
         data: result,
     })
 
@@ -46,6 +47,7 @@ const getIssueById = async (req: Request, res: Response) =>{
 
         res.status(200).json({
             success: true,
+            message: "Issue retrived successfully",
             data: result,
         })
 }   
