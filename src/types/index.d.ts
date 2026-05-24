@@ -11,3 +11,15 @@ declare global {
         }
     }
 }
+
+export interface IErrorResponse {
+    success: false
+    message: string
+    errors?: Record<string, unknown>
+}
+
+export interface ISuccessResponse<T = unknown> {
+    success: true
+    message: string
+    data?: T
+}

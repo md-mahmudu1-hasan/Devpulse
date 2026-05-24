@@ -1,18 +1,32 @@
-import type { NextFunction, Request, Response } from "express";
+import type { NextFunction, Request, Response } from "express"
+import type { IErrorResponse } from "../types/index"
+
+interface IError extends Error {
+    statusCode?: number
+    errors?: Record<string, unknown>
+}
 
 const globalErrorHandler = (
-    error: any,
+    error: IError,
     req: Request,
     res: Response,
     next: NextFunction
-) => {
-    const statusCode = error.statusCode || 500;
+): void => {
+    const statusCode = error.statusCode || 500
+    const message = error.message || "Something went wrong"
 
-    res.status(statusCode).json({
+    const errorResponse: IErrorResponse = {
         success: false,
-        message: error.message || "Something went wrong",
-        error: process.env.NODE_ENV === "development" ? error : undefined,
-    });
-};
+        message,
+        ...(process.env.NODE_ENV === "development" && {
+            errors: error.errors || {
+                message: error.message,
+                stack: error.stack,
+            },
+        }),
+    }
 
-export default globalErrorHandler;
+    res.status(statusCode).json(errorResponse)
+}
+
+export default globalErrorHandler
